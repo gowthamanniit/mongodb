@@ -1,0 +1,47 @@
+install mongodb on windows
+==========================
+https://www.mongodb.com/try#community
+
+download and install.
+note: while installing mongodb choose network service.
+
+MongoDB Configuration
+=======================
+Step 1: Locate the folder where you have installed MongoDB.
+      C:\Program Files\MongoDB
+      Here you need to create couple of folders that we need for MongoDB configuration.
+      1. Create two folders here, name them data and log.
+      2. Create another folder inside data and name it as db, that’s where all the data will be stored.
+      That’s it close the window.
+Step 2: Open command prompt (right click and run as administrator). 
+Navigate to the bin folder of MongoDB. 
+The path to the bin folder may be different in your case based on where you have installed the MongoDB.
+
+c:/windows/system32> cd..
+c:/windows>cd..
+c:/>cd program files/mongodb/server/5.3/bin
+c:/program files/mongodb/server/5.3/bin>
+
+Step 3: Configure the data & log folder and set MongoDB as service by typing this command. 
+        Note: This is a one line command.
+
+mongod --directoryperdb --dbpath "C:\Program Files\MongoDB\data\db" --logpath "C:\Program Files\MongoDB\log\mongo.log" --logappend --rest --install
+
+ex:
+c:/program files/mongodb/server/5.3/bin>mongod --directoryperdb --dbpath "C:\Program Files\MongoDB\data\db" --logpath "C:\Program Files\MongoDB\log\mongo.log" --logappend --rest --install
+
+Step 4: Now you can start MongoDB as a service by typing this command:
+
+net start MongoDB
+
+ex:
+c:/program files/mongodb/server/5.3/bin>net start MongoDB
+
+That’s it everything is done. Now we should be working in the MongoDB shell and we can run that by typing this command within the bin directory.
+
+ex:
+c:/program files/mongodb/server/5.3/bin>mongo
+
+exit or close mongodb
+ex:
+c:/program files/mongodb/server/5.3/bin>net stop MongoDB
