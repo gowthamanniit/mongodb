@@ -1,0 +1,50 @@
+Mapping relational database to MongoDB
+======================================
+rdbms  --------------- mongodb
+database---------------database
+TABLES  ------------------collections
+rows -------------------->documents (field:value,filed:value)
+columns -------------------->fields
+
+Collections in MongoDB is equivalent to the tables in RDBMS.
+Documents in MongoDB is equivalent to the rows in RDBMS.
+Fields in MongoDB is equivalent to the columns in RDBMS.
+
+Fields (key and value pairs) are stored in document, documents are stored in collection and collections are stored in database.
+
+This is how a document looks in MongoDB: As you can see this is similar to the row in RDBMS. The only difference is that they are in JSON format.
+
+{
+name:gowtham,
+age:19,
+hobbies:["","",""]
+}
+
+Table vs Collection
+=====================
+MongoDB automatically inserts a unique _id(12-byte field) field in every document, this serves as primary key for each document.
+
+rdbms
+table format
+
+mongodb
+json format
+
+{
+"_id":objectid("..."),
+sno:
+sname:
+mark:
+college:
+}
+
+{
+"_id":objectid("..."),
+sno:
+sname:
+mark:
+}
+.....
+Another cool thing about MongoDB is that it supports dynamic schema which means 
+one document of a collection can have 4 fields while the other document has only 3 fields. 
+This is not possible in relational database.
