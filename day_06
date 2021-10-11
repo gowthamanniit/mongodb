@@ -1,0 +1,23 @@
+how to drop database?
+======================
+
+syntax:
+>db.dropDatabase()
+
+switch to another database?
+===========================
+>use anotherdatabasename
+
+show current database
+=====================
+>db
+
+ex:
+> db.dropDatabase()
+{ "dropped" : "gowthaman", "ok" : 1 }
+
+check the database whether available or not after dropped
+==========================================================
+>show dbs
+
+
