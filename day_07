@@ -1,0 +1,48 @@
+Creating the Collection(table in rdbms) in MongoDB on the fly
+=============================================================
+method : 1
+syntax:
+
+Syntax: db.collection_name.insert({key:value, key:value…})
+
+For example:
+We don’t have a collection 'user' in the database gowthaman. 
+This command will create the collection named “user” on the fly and insert a document in it with the specified key and value pairs.
+
+> use gowthaman
+switched to db gowthaman
+
+db.user.insert({
+  name: "gowthaman",
+  age: 40,
+  website: "www.karurgowthaman.com"
+})
+You would see this response in the command prompt.
+WriteResult({ "nInserted" : 1 })
+-----------------------------------------------------------------------------------
+To check whether the document(rows in rdbms) is successfully inserted
+====================================================================
+type the following command. It shows all the documents in the given collection.
+
+Syntax:
+
+db.collection_name.find()
+
+ex:
+db.user.find()
+
+--------------------------------------------------------------------
+To check whether the collection(in rdbms table) is created successfully
+=======================================================================
+
+syntax:
+
+show collections
+
+
+ex:
+>show collections
+user
+
+
+
