@@ -1,0 +1,30 @@
+create database:
+================
+ex:
+c:\Program Files\MongoDB\Server\5.0\bin>mongo
+syntax for creating database:
+=============================
+>use database name
+ex:
+>use gowthaman
+
+how to view current database name?
+==================================
+>db
+gowthaman
+
+how to view all databases?
+===========================
+>show dbs
+
+how to insert data(json) ?
+===========================
+> db.user.insert({name:"gowthaman",age:40,mark:99})
+WriteResult({ "nInserted" : 1 })
+
+>show dbs
+....
+
+
+
+
