@@ -1,0 +1,22 @@
+drop collections or table:
+
+syntax 
+=======
+> db.collection_name.drop()
+
+ex:
+>db.user.drop()
+=========================
+
+> use ajaydb
+switched to db ajaybookdb
+
+> show collections
+students
+teachers
+
+> db.teachers.drop()
+true
+
+> show collections
+students
