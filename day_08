@@ -1,0 +1,31 @@
+Method 2: Creating collection(table) with options before inserting the documents(rows):
+Syntax:
+db.createCollection(name, options)
+==========================================
+name is the collection name
+and options is an optional field that we can use to specify certain parameters such as size, max number of documents etc. in the collection.
+First lets see how this command is used for creating collection without any parameters:
+===============================================
+> db.createCollection("students")
+{ "ok" : 1 }
+============================================
+Lets see the options that we can provide while creating a collection:
+capped: type: boolean.
+This parameter takes only true and false. This specifies a cap on the max entries a collection can have. Once the collection reaches that limit, it starts overwriting old entries.
+The point to note here is that when you set the capped option to true you also have to specify the size parameter.
+
+size: type: number.
+This specifies the max size of collection (capped collection) in bytes.
+
+max: type: number.
+This specifies the max number of documents a collection can hold.
+
+autoIndexId: type: boolean
+The default value of this parameter is false. If you set it true then it automatically creates index field _id for each document. We will learn about index in the MongoDB indexing tutorial.
+
+Lets see an example of capped collection:
+================================================
+db.createCollection("teachers", { capped : true, size : 9232768} )
+{ "ok" : 1 }
+This command will create a collection named “teachers” with the max size of 9232768 bytes. 
+Once this collection reaches that limit it will start overwriting old entries.
