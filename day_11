@@ -1,0 +1,68 @@
+MongoDB Query Document using find() method
+===========================================
+
+Querying all the documents using find
+======================================
+db.students.find()
+
+note: this is less-readable. (paragrap format)
+
+Querying all the documents using find with json
+===============================================
+db.students.find().forEach(printjson);
+
+note: to improve readability (easy to view perfectly)
+
+or
+
+db.students.find().pretty()
+
+===========================================================
+Query Document based on the criteria
+====================================
+
+ use: we can fetch selected documents based on a criteria.
+ 
+ > db.students.find({StudentName : "gowthaman"}).pretty()
+ 
+ Greater Than Criteria:
+ =======================
+Syntax:
+
+db.collection_name.find({"field_name":{$gt:criteria_value}}).pretty()
+
+ex:
+>db.students.find({"age":{$gt:32}}).pretty()
+
+Less than Criteria:
+===================
+Syntax:
+
+db.collection_name.find({"field_name":{$lt:criteria_value}}).pretty()
+
+ex:
+>db.students.find({"StudentId":{$lt:3000}}).pretty()
+
+Not Equals Criteria:
+====================
+Syntax:
+db.collection_name.find({"field_name":{$ne:criteria_value}}).pretty()
+
+ex:
+db.students.find({"StudentId":{$ne:1002}}).pretty()
+
+Greater than equals Criteria:
+================================
+syntax:
+db.collection_name.find({"field_name":{$gte:criteria_value}}).pretty()
+
+less than or equal to criteria:
+================================
+db.collection_name.find({"field_name":{$lte:criteria_value}}).pretty()
+
+
+
+
+
+
+
