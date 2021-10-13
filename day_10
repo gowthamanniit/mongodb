@@ -1,0 +1,78 @@
+MongoDB Insert Document:
+========================
+syntax:
+db.collection_name.insert()
+
+MongoDB Insert Document using insert() Example
+============================================
+Here we are inserting a document into the collection named “gowthamandb”. 
+The field “course” in the example below is an array that holds the several key-value pairs.
+
+db.gowthamandb.insert(  
+   {  
+     name: "ajay",  
+     age: 30,
+     email: "admin@ajay.com",
+     course: [ { name: "MongoDB", duration: 7 }, { name: "Java", duration: 30 } ]
+   }  
+)
+
+==============================================
+Verification:
+
+You can also verify whether the document is successfully inserted by typing following command:
+
+db.collection_name.find()
+===============================================================
+MongoDB Example: Insert Multiple Documents in collection
+========================================================
+To insert multiple documents in collection, we define an array of documents
+
+> var studentdata =
+ [
+    {
+	"StudentId" : 1001,
+	"StudentName" : "ajay",
+        "age": 20
+    },
+    {
+	"StudentId" : 1002,
+	"StudentName" : "thimothy",
+        "age": 22
+    },
+    {
+	"StudentId" : 3333,
+	"StudentName" : "gowthaman",
+        "age": 35
+    },
+];
+
+> db.students.insert(studentdata);
+
+output:
+
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 3,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+============================================================================
+verification:
+db.students.find()
+output:
+
+note: output in paragraph format
+
+======================to print output in json structure ========================
+db.students.find().forEach(printjson)
+
+output:
+note: output in json format structure.
+==============================================================================
+
+
