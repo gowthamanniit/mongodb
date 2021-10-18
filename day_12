@@ -1,0 +1,39 @@
+MongoDB – Update Document in a Collection
+==========================================
+In MongoDB, we have two ways to update a document in a collection. 1) update() method 2) save() method.
+
+The update() method is used when we need to update the values of an existing document 
+while save() method is used to replace the existing document.
+
+To update a document in MongoDB, we provide a criteria in command and the document that matches that criteria is updated.
+
+1) Updating Document using update() method
+=======================================
+Syntax:
+
+db.collection_name.update(criteria, update_data)
+
+example:
+=======
+db.student.update({"name":"ajay"},{$set:{"name":"ajay krishnan"}})
+db.student.update({"name":"thimothi"},{$set:{"name":"Timothy"}})
+
+note:
+By default the update method updates a single document.
+
+To update multiple documents with the update() method:
+======================================================
+db.student.update({"name":"gowthaman"},{$set:{"name":"Gowthaman K"}},{multi:true})
+
+2) save method:(update)
+=======================
+Syntax:
+db.collection_name.save( {_id:ObjectId(), new_document} )
+
+ex:
+ db.student.save({"_id" : ObjectId("--------------------"), "name":
+ "ajay", "age": 20})
+
+You should see this output:
+
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
