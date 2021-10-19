@@ -60,8 +60,9 @@ less than or equal to criteria:
 ================================
 db.collection_name.find({"field_name":{$lte:criteria_value}}).pretty()
 
-
-
+between  two marks
+====================
+db.student.find({"mark":{$gt:69,$lt:90}}).forEach(printjson)
 
 
 
