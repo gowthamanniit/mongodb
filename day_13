@@ -1,0 +1,20 @@
+Syntax of remove() method:
+===========================
+db.collection_name.remove(delete_criteria)
+ex:
+db.students.remove({"Studentname":"ajay"})
+Output:
+WriteResult({ "nRemoved" : 1 })
+
+How to remove only one document matching your criteria?
+=======================================================
+db.collection_name.remove(delete_criteria, justOne)
+
+justone:  1 or 0
+
+1 --> only one record will be delete.
+0 --> default (all recored delete according to the condition)
+
+Remove all Documents
+=====================
+db.collection_name.remove({})
