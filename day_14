@@ -1,0 +1,46 @@
+MongoDB Projection
+==================
+This is used when we want to get the selected fields of the documents rather than all fields.
+
+For example, we have a collection where we have stored documents 
+that have the fields: student_name, student_id, student_age 
+but we want to see only the student_id of all the students then 
+in that case we can use projection to get only the student_id.
+
+Syntax:
+=======
+db.collection_name.find({},{field_key:1 or 0})
+
+
+field key : Value 1 means show that field 
+field key : Value 0 means do not show that field
+
+MongoDB Projection Example
+============================
+
+To get only the student_id for all the documents, we will use the Projection like this:
+
+> db.studentdata.find({}, {"_id": 0, "student_id": 1})
+{ "student_id" : 2002 }
+{ "student_id" : 2003 }
+{ "student_id" : 2004 }
+
+
+important Note:
+=================
+Some of you may get this error while using Projection in Query:
+
+Error: error: {
+  "ok" : 0,
+  "errmsg" : "Projection cannot have a mix of inclusion and exclusion.",
+  "code" : 2,
+  "codeName" : "BadValue"
+}
+
+ex:
+This happens when you set some fields to 0 and other to 1, 
+in other words you mix inclusion and exclusion, the only exception is the _id field. 
+for example: The following Query would produce this error:
+
+db.studentdata.find({}, {"_id": 0, "student_name": 0, "student_age": 1})
+
