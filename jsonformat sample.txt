@@ -1,0 +1,37 @@
+var res=[
+{
+	sno:1,	
+	name:'ramesh',
+	mark:44	
+},
+{
+	sno:2,	
+	name:'kumaresh',
+	mark:74	
+},
+{
+	sno:3,	
+	name:'sathish',
+	mark:94	
+},
+{
+	sno:4,
+	name:'banu',
+	mark:33
+},
+{
+	sno:5,
+	name:'chitra',
+	mark:12
+},
+{
+	sno:6,
+	name:'deena',
+	mark:87
+},
+{
+	sno:7,
+	name:'chitra',
+	mark:87
+}
+]
