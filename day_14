@@ -29,6 +29,20 @@ mongodb projection with condition(creteria):
 ===========================================
 db.student.find({mark:{$lte:50}},{mark:1})
 
+mongodb projection with multiple condition(creteria):
+====================================================
+db.student.find({mark:{$lte:50},sno:{$lte:4}},{mark:1})
+
+mongodb projection with multiple condition(creteria) + multi fields show:
+=========================================================================
+db.student.find({mark:{$lte:50},sno:{$lte:4}},{mark:1,name:1})
+
+mongodb projection with multiple condition(creteria) + multi fields show + do not show _id:
+==============================================================================================
+db.student.find({mark:{$lte:50},sno:{$lte:4}},{_id:0,mark:1,name:1})
+
+
+
 important Note:
 =================
 Some of you may get this error while using Projection in Query:
