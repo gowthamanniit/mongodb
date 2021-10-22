@@ -25,6 +25,9 @@ To get only the student_id for all the documents, we will use the Projection lik
 { "student_id" : 2003 }
 { "student_id" : 2004 }
 
+mongodb projection with condition(creteria):
+===========================================
+db.student.find({mark:{$lte:50}},{mark:1})
 
 important Note:
 =================
