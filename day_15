@@ -1,0 +1,23 @@
+MongoDB – limit( ) and skip( ) method
+The limit() method in MongoDB
+==============================
+This method limits the number of documents returned in response to a particular query.
+Syntax:
+
+db.collection_name.find().limit(number_of_documents)
+
+db.studentdata.find({student_id : {$gt:2002}}).pretty()
+
+db.studentdata.find({student_id : {$gt:2002}}).limit(1).pretty()   ---> note: show first occurance of record (remaining records skip)
+
+
+MongoDB Skip() Method
+======================
+
+The skip() method is used for skipping the given number of documents in the Query result.
+
+syntax:
+db.collection_name.find().skip(number_of_documents)
+
+ex:
+db.studentdata.find({student_id : {$gt:2002}}).limit(1).skip(1).pretty() --->note: skip the first recored and show second record onwards.
