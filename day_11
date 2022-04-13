@@ -64,6 +64,8 @@ between  two marks
 ====================
 db.student.find({"mark":{$gt:69,$lt:90}}).forEach(printjson)
 
-
+equals:
+=======
+db.student.find({"mark":{$eq:88}})
 
 
