@@ -32,6 +32,7 @@ db.student.find({mark:{$lte:50}},{mark:1})
 mongodb projection with multiple condition(creteria):
 ====================================================
 db.student.find({mark:{$lte:50},sno:{$lte:4}},{mark:1})
+db.customers.find({mark:{$gte:20,$lte:75}},{mark:1,_id:0})
 
 mongodb projection with multiple condition(creteria) + multi fields show:
 =========================================================================
