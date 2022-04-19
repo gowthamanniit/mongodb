@@ -1,0 +1,22 @@
+Syntax of sort() method:
+
+db.collecttion_name.find().sort({field_key:1 or -1})
+1 is for ascending order and -1 is for descending order. The default value is 1.
+
+
+
+> db.studentdata.find({}, {"student_id": 1, _id:0}).sort({"student_id": -1})
+{ "student_id" : 2004 }
+{ "student_id" : 2003 }
+{ "student_id" : 2002 }
+
+
+Default: The default is ascending order so If I don’t provide any value in the sort() method then it will sort the records in ascending order as shown below:
+
+> db.studentdata.find({}, {"student_id": 1, _id:0}).sort({})
+{ "student_id" : 2002 }
+{ "student_id" : 2003 }
+{ "student_id" : 2004 }
+
+
+
