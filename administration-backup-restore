@@ -1,0 +1,56 @@
+Data backup is one of the most highly required processes for any database management system 
+as data can be lost or get corrupted to overcome these drawbacks we need database backup. 
+Database backup is a copy of a database that already exists. 
+In MongoDB, mongodump tool is used to take the data backup. 
+And mongorestore tool is used to restore the backup data.
+In MongoDB, mongodump tool is used to take the data backup. 
+It simply dumps all the data stored into a dump directory of MongoDB. 
+Backed-up data is in BSON format also known as BSON data dumps. 
+By default, the backup is stored in mongodb’s bin\dump folder 
+to specify a different output directory we can use the –out option. 
+Mongodump is used in two ways with or without argument.
+
+1)Without Argument:
+=================
+Without any arguments, mongodump connects with MongoDB instance
+on the local system on port 27017 and 
+creates a backup of every database and every collection.
+
+ex:mongodump
+2) With Argument: 
+====================
+By specifying the database in the argument by which 
+we can limit the amount of data stored in the database dump
+
+ex: mongodump --db databaseName --collection collectionName
+
+To specify a different output directory we can use the –out option:
+
+ex: mongodump –db databaseName –collection collectionName –out c:\backup
+Example 1: Backing up all the databases (your dir-not default dir)
+========================================
+ex: mongodump --out c:\backupDatabase
+Example 2: Backing up the specified collection
+================================================
+mongodump –db student –collection detail –out c:\Gowthamanbackup 
+
+Data Restoration
+=================
+In MongoDB, mongorestore utility is used to restore the backup data.
+It restores the binary backup created by mongodump utility(i.e., BSON data dumps)
+
+To restore all the database use –
+
+ex: mongorestore dump(default folder)
+=======================================
+
+To restore a specific collection use-
+
+mongorestore  –db databaseName –collection collectionName directory\collectionName.bson
+
+ex:
+mongodump --db student --collection detail --out c:\gowbackup
+
+mongorestore –db student –collection detail c:\gowbackup\students.bson  
+// now try drop database
+db.students.drop()
