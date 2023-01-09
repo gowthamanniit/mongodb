@@ -1,14 +1,15 @@
 Introduction to Mongodb
 ======================
-MongoDB is an open source, document oriented database that stores data in form of documents (key and value pairs).
+MongoDB is an open source, document oriented(paragraph format) database that stores data in form of documents (key and value pairs).
 
 document based example:
 ======================
 {
-   name: "Chaitanya",                                //field: value
+   rno:1001
+   name: "karthi",                                //field: value
    age: 30,
-   website: "book.com",
-   hobbies: ["Teaching", "Watching TV"]
+   website: "www.karthi.com",
+   hobbies: ["cricket", "kabadi","tennis","chess"]
 }
 This is a JSON like structure. Where data is stored in form of key and value pairs.
 History of MongoDB
