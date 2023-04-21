@@ -71,18 +71,19 @@ db.student.find({"mark":{$eq:88}})
 how to use sql like statement in Mongodb?
 ==========================================
 
-db.student.find({name:/^c/})
+db.student.find({name:/^c/})                 # in sql : like 'c%'
 
 ex: (starting letter must start with c)
 chitra
 chandran
 chandra
 
-db.student.find({name:/c/})
+db.student.find({name:/c/})          # in sql : like '%c%'
 
 ex: (any where check)
 chita
 abc
 abcd
 
+db.student.find({name:/an$/})    # in sql : like '%an'
 
