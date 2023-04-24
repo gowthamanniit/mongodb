@@ -27,6 +27,13 @@ db.student.update({"name":"gowthaman"},{$set:{"name":"Gowthaman K"}},{multi:true
 or
 db.student.updateMany({"mark":0},{$set:{"mark":100}})
 
+To update result pass/fail query
+===================================
+db.customers.updateMany({mark:{$gte:50}},{$set:{result:"pass"}})
+db.customers.updateMany({mark:{$lte:49}},{$set:{result:"fail"}})
+
+note: result field not be must
+
 2) save method:(update)
 =======================
 Syntax:
