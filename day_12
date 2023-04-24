@@ -34,6 +34,10 @@ db.customers.updateMany({mark:{$lte:49}},{$set:{result:"fail"}})
 
 note: result field not be must
 
+To update grade query
+=====================
+> db.customers.updateMany({mark:{$gte:75,$lt:85}},{$set:{grade:"excellent"}})
+
 2) save method:(update)
 =======================
 Syntax:
