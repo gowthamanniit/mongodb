@@ -24,6 +24,8 @@ By default the update method updates a single document.
 To update multiple documents with the update() method:
 ======================================================
 db.student.update({"name":"gowthaman"},{$set:{"name":"Gowthaman K"}},{multi:true})
+or
+db.student.updateMany({"mark":0},{$set:{"mark":100}})
 
 2) save method:(update)
 =======================
