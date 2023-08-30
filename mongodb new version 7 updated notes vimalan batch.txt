@@ -1,0 +1,429 @@
+how to download and install monogodb?
+step 1:
+	download mongodb community server
+
+website:https://www.mongodb.com/try/download/community
+	
+	download version latest : 7.0
+
+step 2: set environment path:
+	copy path: c:/program files/mongodb/server/7.0/bin/
+	last '/' important
+
+	this pc --> right click --> properties --> advanced system settings --> environmnet variables --> 
+system variables: path	select -->edit --> new --> paste
+	ok ok ok.
+	
+
+step 3:
+	download mongodb shell
+	website:
+	https://www.mongodb.com/try/download/shell
+
+	extract zip file --> goto to bin --> copy mongosh.exe
+
+	open : c:/program files/mongodb/server/7.0/bin
+
+	paste mongosh.exe
+step 4:
+	open command prompt with run as administrator
+
+	how to start mongodb ?
+	c:/.../>net start mongodb
+	or
+	run: services.msc --> mongodb --> start service
+
+	c:/.../..>mongosh
+
+	how to create database or select database?
+
+	test>use databasename(userdefine)
+
+	note: if the database name is not found , it will create automatically,otherwise selected current database.
+
+	use --> keyword
+
+	how to create colletion & insert record first time ?
+	------------------------------------------------------
+	db.collectionname.insert({key1:value1,key2:value2,...})
+			or
+			insertOne
+			or
+			insertMany
+
+	db-----> keyword
+	collectionname(mongodb) or tablename(rdbms)-->userdefine
+	insert,insertOne,insertMany--> keyword
+
+	how to view collection or table values?
+	-------------------------------------
+	db.collectionname.find()
+
+	ex:
+	>db.details.find()
+
+	how to stop mongodb in command ?
+	--------------------------------
+	>net stop mongodb
+		
+	
+===================================================================
+how to view all database names?
+	>show dbs
+
+how to view current database name ?
+
+	>db
+
+how to view collectionnames or tablenames in a db?
+
+	> show collections
+
+how to view records in json format?
+
+	>db.collectionname.find().pretty()
+
+	ex:
+	{
+		key1:value1,
+		key2:value2,
+		.............
+	}
+
+=====================================================================
+how to create collection without insert data?
+
+>db.createCollection("collectionname")
+
+>db.createCollection("collectionname",{capped:true,size:5})
+
+note: size :5 only allowed to store 5 bytes
+old data will erase after 5 bytes exceed.
+======================================================================
+how to drop database?
+
+gowthaman>db.dropDatabase()
+
+======================================================================
+how to deleter documents or row?
+version:7.0 onwards
+>db.collectionname.deleteOne({key:value})
+>db.collectionname.deleteMany({key:value})
+
+delete all rows:
+>db.collectionname.deleteMany({})
+
+version 5.0 and below:
+
+>db.collectionname.remove({key:value})
+remove all records
+>db.collectionname.remove({})
+
+==========================================================================
+
+how to drop collection?
+
+>db.collectionname.drop()
+
+================================================================
+
+inserting multiple records?
+
+step 1:
+	var variablename=[
+		{k:v,,,,},{k:v,,,,,,},{k:v,,,,,,},.............
+	]
+step 2:
+	db.collectionname.insert(variablename)
+	or
+	db.collectionname.insert([{},{},{},....])
+	or
+	db.collectionname.insertMany([{},{},{},....])
+
+ex:
+gowthaman> db.testcol.insertMany([{sno:1},{sno:2},{sno:3}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("64ecc783d0731012cd80b7d3"),
+    '1': ObjectId("64ecc783d0731012cd80b7d4"),
+    '2': ObjectId("64ecc783d0731012cd80b7d5")
+  }
+}
+gowthaman> db.testcol.find()
+[
+  { _id: ObjectId("64ecc783d0731012cd80b7d3"), sno: 1 },
+  { _id: ObjectId("64ecc783d0731012cd80b7d4"), sno: 2 },
+  { _id: ObjectId("64ecc783d0731012cd80b7d5"), sno: 3 }
+]
+gowthaman>
+================================================================
+
+important:
+query based mongodb:
+use: To retrive data according to condition
+ex:
+	pass students list
+	fail students list
+	below 50 mark
+	above 90 mark
+	
+syntax:
+>db.collectionname.find({query})
+ex:
+>db.mydetails.find({mark:{$gt:49}})
+
+types:
+	$gt --------> greaterthan
+	$lt---------> less than
+	$gte--------> greater than or equal to
+	$lte--------> less than or equal to
+	$ne---------> not equal to
+	$eq---------> equals
+
+extra: between 50 to 75
+=======================
+>db.mydetails.find({mark:{$gte:50,$lte:75}})
+or
+>db.mydetails.find({mark:{$gt:49,$lt:76}})
+
+using string based query management
+===================================
+syntax:
+>db.collectionname.find({name:/^any char/})
+
+note: ^ --->starting letter 
+      $ ---> ending letter	
+      empty--> anywhere letter	
+ex:1 (starting letter or word)
+gowthaman> db.studinfo.find({name:/^ch/})
+[
+  {
+    _id: ObjectId("64ecc675d0731012cd80b7cf"),
+    sno: 5,
+    name: 'chitra',
+    mark: 12
+  },
+  {
+    _id: ObjectId("64ecc675d0731012cd80b7d1"),
+    sno: 7,
+    name: 'chitra',
+    mark: 87
+  },
+  {
+    _id: ObjectId("64eda2ded0731012cd80b7d6"),
+    sno: 10,
+    name: 'chandrayan',
+    mark: 88
+  }
+]
+ex:2 (last letter or word)
+gowthaman> db.studinfo.find({name:/sh$/})
+[
+  {
+    _id: ObjectId("64ecc675d0731012cd80b7cb"),
+    sno: 1,
+    name: 'ramesh',
+    mark: 44
+  },
+  {
+    _id: ObjectId("64ecc675d0731012cd80b7cc"),
+    sno: 2,
+    name: 'kumaresh',
+    mark: 74
+  },
+  {
+    _id: ObjectId("64ecc675d0731012cd80b7cd"),
+    sno: 3,
+    name: 'sathish',
+    mark: 94
+  }
+]
+
+ex:3(anywhere search)
+gowthaman> db.studinfo.find({name:/i/})
+[
+  {
+    _id: ObjectId("64ecc675d0731012cd80b7cd"),
+    sno: 3,
+    name: 'sathish',
+    mark: 94
+  },
+  {
+    _id: ObjectId("64ecc675d0731012cd80b7cf"),
+    sno: 5,
+    name: 'chitra',
+    mark: 12
+  },
+  {
+    _id: ObjectId("64ecc675d0731012cd80b7d1"),
+    sno: 7,
+    name: 'chitra',
+    mark: 87
+  },
+  {
+    _id: ObjectId("64eda48ad0731012cd80b7d7"),
+    sno: 9,
+    name: 'shalini',
+    mark: 87
+  }
+]	
+	
+
+
+how to update documents ?
+============================
+use: we can change existing values
+sytnax:1
+	db.collectionname.updateOne({key:value},{$set:{key:value}})
+sytnax:2
+	db.collectionname.updateMany({key:value},{$set:{key:value}})
+
+ex:1
+
+db.studinfo.updateOne({name:"chitra"},{$set:{name:"chitra devi"}})
+
+ex:2
+db.studinfo.updateMany({name:"chitra"},{$set:{name:"chitra devi"}})
+
+ex:3
+
+db.studinfo.updateMany({mark:87},{$set:{mark:100}})
+ex: 4:
+
+db.studinfo.updateOne({sno:5},{$set:{mark:10}})
+
+ex:5 pass/fail update
+
+>db.studinfo.updateMany({mark:{$gte:50}},{$set:{result:"pass"}})
+
+	note: result field automatticalled created if not found.
+
+>db.studinfo.updateMany({mark:{$lte:49}},{$set:{result:"fail"}})
+
+note:
+don't use save method , because deprecated in version 7 
+
+
+==============================================
+mongodb projection:
+==================
+projection:
+	def: only shows essential fields rather than other fields.
+
+syntax:
+
+>db.collectionname.find({},{filedname:1 or 0})
+
+1--->show
+0--->hidden
+
+default fields:
+	_id ---> always 1
+	other fileds--->always 0
+
+ex:
+>db.studinfo.find({},{_id:0,sno:1,sname:1})
+
+output:
+{sno:1001,sname:"gowthaman"})
+,,,,,,
+
+mongodb projection with query:
+=================================
+>db.collectionname.find({condition},{field:1 or 0})
+ex:
+
+gowthaman> db.studinfo.find({mark:{$gt:50}},{_id:0,sno:1,name:1})
+[
+  { sno: 2, name: 'kumaresh' },
+  { sno: 3, name: 'sathish' },
+  { sno: 6, name: 'deena' },
+  { sno: 7, name: 'chitra devi' },
+  { sno: 10, name: 'chandrayan' },
+  { sno: 9, name: 'shalini karur' }
+]
+mongodb projection with multiple conditions
+============================================
+syntax:
+gowthaman>db.collectionname.find({key:condition,key:condition,...},{field:1 or 0})
+ex:
+two conditons:
+gowthaman> db.studinfo.find({mark:{$gt:49},sno:{$gt:2}},{_id:0})
+[
+  { sno: 3, name: 'sathish', mark: 94, result: 'pass' },
+  { sno: 6, name: 'deena', mark: 100, result: 'pass' },
+  { sno: 7, name: 'chitra devi', mark: 100, result: 'pass' },
+  { sno: 10, name: 'chandrayan', mark: 88, result: 'pass' },
+  { sno: 9, name: 'shalini karur', mark: 100, result: 'pass' }
+]
+================================
+mongodb limit and skip methods:
+
+use:
+	limit method:Number of documents returned from top.
+	skip method :skip the number of documents from top.
+		     remaining documents will show.
+
+syntax:
+	>db.collectionname.find().limit(no. of documents)
+syntax:
+	>db.collectionname.find().skip(no. of docuemnts)
+
+ex:
+	gowthaman>db.studinfo.find().limt(4)
+	gowthaman>db.studinfo.find().skip(4)
+
+query based limit and skip method:
+==================================
+
+syntax:
+	>db.collectionname.find({query}).limit(no. of records)
+	>db.collectionname.find({query}).skip(no. of records)
+
+ex:
+db.studinfo.find({result:{$eq:"pass"}}).limit(4)
+db.studinfo.find({result:{$eq:"pass"}}).skip(4)
+
+To display ascending / descending order:
+========================================
+
+syntax:
+>db.collectionname.find().sort(fieldkey:1 or -1)
+
+1---> ascending
+-1--->descending
+
+ex:
+db.studinfo.find().sort({name:1})
+db.studinfo.find().sort({mark:-1})
+
+query based ascending / descending:
+===================================
+>db.collectionname.find({key:{condition}}).sort(key:1 or -1)
+
+ex:
+
+db.studinfo.find({mark:{$gt:49}}).sort({mark:1})
+
+query based ascending/descending with projection
+================================================
+ db.studinfo.find({mark:{$gt:49}},{_id:0}).sort({mark:1})
+output:
+[
+{ sno: 2, name: 'kumaresh', mark: 74, result: 'pass' },
+  { sno: 10, name: 'chandrayan', mark: 88, result: 'pass' },
+  { sno: 3, name: 'sathish', mark: 94, result: 'pass' },
+  { sno: 6, name: 'deena', mark: 100, result: 'pass' },
+  { sno: 7, name: 'chitra devi', mark: 100, result: 'pass' },
+  { sno: 9, name: 'shalini karur', mark: 100, result: 'pass' }
+]
+
+
+
+
+
+
+
+
+
