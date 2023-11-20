@@ -68,6 +68,10 @@ equals:
 =======
 db.student.find({"mark":{$eq:88}})
 
+multiple condition:
+==================
+db.sdata.find({name:'banu',mark:{$gt:50}}).pretty()
+
 how to use sql like statement in Mongodb?
 ==========================================
 
