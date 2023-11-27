@@ -8,7 +8,8 @@ db.collection_name.find().limit(number_of_documents)
 
 db.studentdata.find({student_id : {$gt:2002}}).pretty()
 
-db.studentdata.find({student_id : {$gt:2002}}).limit(1).pretty()   ---> note: show first occurance of record (remaining records skip)
+db.studentdata.find({student_id : {$gt:2002}}).limit(1).pretty()   
+---> note: show first occurance of record (remaining records skip)
 
 
 MongoDB Skip() Method
@@ -20,4 +21,5 @@ syntax:
 db.collection_name.find().skip(number_of_documents)
 
 ex:
-db.studentdata.find({student_id : {$gt:2002}}).limit(1).skip(1).pretty() --->note: skip the first recored and show second record onwards.
+db.studentdata.find({student_id : {$gt:2002}}).limit(1).skip(1).pretty() 
+--->note: skip the first recored and show second record onwards.
