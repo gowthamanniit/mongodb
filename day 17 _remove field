@@ -1,0 +1,6 @@
+
+db.emp.update({},{$unset:{ename:1}})
+
+db.emp.update({},{$unset:{ename:1}},{multi:1})
+
+  
