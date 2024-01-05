@@ -10,7 +10,8 @@ step 2: set environment path:
 	copy path: c:/program files/mongodb/server/7.0/bin/
 	last '/' important
 
-	this pc --> right click --> properties --> advanced system settings --> environmnet variables --> 
+	this pc --> right click --> properties --> 
+advanced system settings --> environmnet variables --> 
 system variables: path	select -->edit --> new --> paste
 	ok ok ok.
 	
