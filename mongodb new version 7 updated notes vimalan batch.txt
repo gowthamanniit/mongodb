@@ -40,7 +40,9 @@ step 4:
 
 	test>use databasename(userdefine)
 
-	note: if the database name is not found , it will create automatically,otherwise selected current database.
+	note: if the database name is not found , 
+it will create automatically,
+otherwise selected current database.
 
 	use --> keyword
 
