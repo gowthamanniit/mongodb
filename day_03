@@ -10,9 +10,11 @@ Collections in MongoDB is equivalent to the tables in RDBMS.
 Documents in MongoDB is equivalent to the rows in RDBMS.
 Fields in MongoDB is equivalent to the columns in RDBMS.
 
-Fields (key and value pairs) are stored in document, documents are stored in collection and collections are stored in database.
+Fields (key and value pairs) are stored in document, 
+documents are stored in collection and collections are stored in database.
 
-This is how a document looks in MongoDB: As you can see this is similar to the row in RDBMS. The only difference is that they are in JSON format.
+This is how a document looks in MongoDB: As you can see this is similar 
+to the row in RDBMS. The only difference is that they are in JSON format.
 
 {
 name:gowtham,
@@ -22,7 +24,8 @@ hobbies:["","",""]
 
 Table vs Collection
 =====================
-MongoDB automatically inserts a unique _id(12-byte field) field in every document, this serves as primary key for each document.
+MongoDB automatically inserts a unique _id(12-byte field) 
+field in every document, this serves as primary key for each document.
 
 rdbms
 table format
