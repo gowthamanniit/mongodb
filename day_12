@@ -1,11 +1,17 @@
 MongoDB – Update Document in a Collection
 ==========================================
-In MongoDB, we have two ways to update a document in a collection. 1) update() method 2) save() method.
+In MongoDB, we have two ways to update a document in a collection. 
+1) update() method 
+2) save() method.
 
-The update() method is used when we need to update the values of an existing document 
+The update() method is used when we need to 
+update the values of an existing document 
+
 while save() method is used to replace the existing document.
 
-To update a document in MongoDB, we provide a criteria in command and the document that matches that criteria is updated.
+To update a document in MongoDB, 
+we provide a criteria in command and the document 
+that matches that criteria is updated.
 
 1) Updating Document using update() method
 =======================================
