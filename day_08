@@ -1,18 +1,24 @@
-Method 2: Creating collection(table) with options before inserting the documents(rows):
+Method 2: Creating collection(table) with options 
+before inserting the documents(rows):
 Syntax:
 db.createCollection(name, options)
 ==========================================
 name is the collection name
-and options is an optional field that we can use to specify certain parameters such as size, max number of documents etc. in the collection.
-First lets see how this command is used for creating collection without any parameters:
+and options is an optional field that we can use to specify certain parameters 
+such as size, max number of documents etc. in the collection.
+First lets see how this command is used for creating collection 
+without any parameters:
 ===============================================
 > db.createCollection("students")
 { "ok" : 1 }
 ============================================
 Lets see the options that we can provide while creating a collection:
 capped: type: boolean.
-This parameter takes only true and false. This specifies a cap on the max entries a collection can have. Once the collection reaches that limit, it starts overwriting old entries.
-The point to note here is that when you set the capped option to true you also have to specify the size parameter.
+This parameter takes only true and false. 
+This specifies a cap on the max entries a collection can have. 
+Once the collection reaches that limit, it starts overwriting old entries.
+The point to note here is that when you set the capped option 
+to true you also have to specify the size parameter.
 
 size: type: number.
 This specifies the max size of collection (capped collection) in bytes.
