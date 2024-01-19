@@ -47,7 +47,8 @@ mongodump –db student –collection detail –out c:\Gowthamanbackup
 Data Restoration
 =================
 In MongoDB, mongorestore utility is used to restore the backup data.
-It restores the binary backup created by mongodump utility(i.e., BSON data dumps)
+It restores the binary backup created by mongodump utility
+(i.e., BSON data dumps)
 
 To restore all the database use –
 
