@@ -1,13 +1,22 @@
-Data backup is one of the most highly required processes for any database management system 
-as data can be lost or get corrupted to overcome these drawbacks we need database backup. 
+Data backup is one of the most highly required processes 
+for any database management system as data can be 
+lost or get corrupted to overcome 
+these drawbacks we need database backup. 
+
 Database backup is a copy of a database that already exists. 
+
 In MongoDB, mongodump tool is used to take the data backup. 
+
 And mongorestore tool is used to restore the backup data.
-In MongoDB, mongodump tool is used to take the data backup. 
+
 It simply dumps all the data stored into a dump directory of MongoDB. 
+
 Backed-up data is in BSON format also known as BSON data dumps. 
+
 By default, the backup is stored in mongodb’s bin\dump folder 
+
 to specify a different output directory we can use the –out option. 
+
 Mongodump is used in two ways with or without argument.
 
 1)Without Argument:
@@ -27,6 +36,7 @@ ex: mongodump --db databaseName --collection collectionName
 To specify a different output directory we can use the –out option:
 
 ex: mongodump –db databaseName –collection collectionName –out c:\backup
+
 Example 1: Backing up all the databases (your dir-not default dir)
 ========================================
 ex: mongodump --out c:\backupDatabase
