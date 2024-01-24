@@ -1,0 +1,3 @@
+db.totmark.aggregate([{$addFields:{total:{$sum:["$m1","$m2","$m3"]}}}])
+
+db.totmark.aggregate([{$group:{_id:{sname:"$sname"},total:{$sum:"$m1"}}}])
