@@ -11,4 +11,10 @@ db.emp.update({},{$unset:{ename:1}})
 
 db.emp.update({},{$unset:{ename:1}},{multi:1})
 
-  
+  Mongodbdb 6 version onwards:
+==================================
+db.collectionname.updateMany({},{$unset:{fieldname:1}})
+db.collectionname.updateOne({},{$unset:{fieldname:1}})
+
+
+
