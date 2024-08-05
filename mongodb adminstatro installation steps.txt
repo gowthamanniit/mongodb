@@ -6,17 +6,20 @@ step 2:
 	copy path:
 	C:\Program Files\MongoDB\Tools\100\bin
 
-step 3: this pc -->right click--> properties --> advanced system settings-->environment variables --> system variables --> path --> click -->edit --> new -->
-	paste --> ok ok ok
+step 3: this pc -->right click--> properties --> advanced system 
+settings-->environment variables --> system variables --> path --> 
+click -->edit --> new -->paste --> ok ok ok
 
 step 4:  start -->command prompt -->run as administrator
 
-c:/windows/system32>mongodump --db student --collection dis --out d:\backup
+c:/windows/system32>mongodump --db student --collection dis --out 
+d:\backup
 
 step 5: remove or delete dis collction
 	>mongo
 	db.dis.drop()
 	o/p: true
 step 6:
-            c:/windows/system32>mongorestore--db student --collection dis d:\backup\student\dis.bson
+            c:/windows/system32>mongorestore--db student --
+collection dis d:\backup\student\dis.bson
 	
