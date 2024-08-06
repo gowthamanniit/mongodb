@@ -5,6 +5,9 @@ What is a schema?
 A schema defines the structure of your collection documents. A Mongoose schema maps directly to a MongoDB collection.
 
 example:
+import mongoose from 'mongoose';
+const { Schema, model } = mongoose;
+
 const blog = new Schema({
 title: String,
 slug: String,
@@ -20,6 +23,8 @@ comments: [{
    votes: Number
   }]
 });
+const Blog = model('Blog', blogSchema);
+export default Blog;
 
 With schemas, we define each field and its data type. Permitted types are:
 
