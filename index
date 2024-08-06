@@ -1,0 +1,24 @@
+The createIndex() Method
+To create an index, you need to use createIndex() method of MongoDB.
+
+Syntax
+The basic syntax of createIndex() method is as follows().
+
+>db.COLLECTION_NAME.createIndex({KEY:1})
+Here key is the name of the field on which you want to create index and 1 is for ascending order. To create index in descending order you need to use -1.
+In createIndex() method you can pass multiple fields, to create index on multiple fields.
+
+>db.mycol.createIndex({"title":1,"description":-1})
+
+The dropIndex() method
+You can drop a particular index using the dropIndex() method of MongoDB.
+
+Syntax
+The basic syntax of DropIndex() method is as follows().
+
+>db.COLLECTION_NAME.dropIndex({KEY:1})
+Here, "key" is the name of the file on which you want to remove an existing index. Instead of the index specification document (above syntax), you can also specify the name of the index directly as:
+
+dropIndex("name_of_the_index")
+Example
+> db.mycol.dropIndex({"title":1})
