@@ -9,7 +9,13 @@ Here key is the name of the field on which you want to create index and 1 is for
 In createIndex() method you can pass multiple fields, to create index on multiple fields.
 
 >db.mycol.createIndex({"title":1,"description":-1})
+The getIndexes() method
+This method returns the description of all the indexes int the collection.
 
+Syntax
+Following is the basic syntax od the getIndexes() method −
+
+db.COLLECTION_NAME.getIndexes()
 The dropIndex() method
 You can drop a particular index using the dropIndex() method of MongoDB.
 
