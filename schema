@@ -1,10 +1,39 @@
 What is a Schema?
-A schema is a JSON object that defines the structure and contents of your data.
+A schema is a JSON object that defines the structure and contents of
+your data.
 
 What is a schema?
-A schema defines the structure of your collection documents. A Mongoose schema maps directly to a MongoDB collection.
+A schema defines the structure of your collection documents. 
+A Mongoose schema maps directly to a MongoDB collection.
+
+Define a Schema
+=================
+A root-level collection schema can contain additional schemas that
+describe the type's properties. Each root-level schema is an object
+schema that has the following form:
+
+{
+  "bsonType": "object",
+  "title": "<Type Name>",
+  "required": ["<Required Field Name>", ...],
+  "properties": {
+    "<Field Name>": <Schema>
+  }
+}
 
 example:
+{
+  "title": "person",
+  "properties": {
+    "_id": { "bsonType": "objectId" },
+    "name": { "bsonType": "string" }
+  }
+}
+
+
+
+==================================
+example: nodejs
 import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
 
