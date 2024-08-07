@@ -1,0 +1,11 @@
+>db.collectionname.storageSize()
+
+>db.collectionname.totalIndexSize()   // previously you must created indexes
+
+> db.collectionname.dropIndex()
+
+>db.collectionname.totalIndexSize()   
+
+>db.collectioname.countDocuments()
+
+>db.collectionname.dataSize()
