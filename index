@@ -24,7 +24,9 @@ Syntax
 The basic syntax of DropIndex() method is as follows().
 
 >db.COLLECTION_NAME.dropIndex({KEY:1})
-Here, "key" is the name of the file on which you want to remove an existing index. Instead of the index specification document (above syntax), you can also specify the name of the index directly as:
+Here, "key" is the name of the file on which you want to remove an existing index. 
+Instead of the index specification document (above syntax), you can also specify 
+the name of the index directly as:
 
 dropIndex("name_of_the_index")
 Example
