@@ -1,0 +1,29 @@
+google: mongodb atlas
+
+url: https://www.mongodb.com/cloud/atlas/register
+
+signup with google
+
+organization,experiance,.... submit
+
+create cluster --> MO free -->
+provider:AWS , (google ,azure)
+create deploymenht button click.
+ (buzzles-choose)
+drivers
+--> username,passord: copy and paste secure place.
+
+database --> click 
+browse collection --> create database
+database name: ........
+collectionname:............
+additional preference: capped collection
+size:10000
+
+insert document (right side)
+
+id:.........
+sno:"" string
+sname:"" string
+mark:199 int32
+
