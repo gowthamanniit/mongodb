@@ -2,7 +2,6 @@ What is a Schema?
 A schema is a JSON object that defines the structure and contents of
 your data.
 
-What is a schema?
 A schema defines the structure of your collection documents. 
 A Mongoose schema maps directly to a MongoDB collection.
 
