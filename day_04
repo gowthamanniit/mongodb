@@ -45,3 +45,71 @@ c:/program files/mongodb/server/5.3/bin>mongo
 exit or close mongodb
 ex:
 c:/program files/mongodb/server/5.3/bin>net stop MongoDB
+
+================================after version 6.0==========
+step 1:
+	download 2 files
+	google: i) download mongodb community server (.msi) 700mb
+	google: ii) download mongodb shell (.zip) 40mb
+step 2:
+	mongosh 2.3.8 (extract )(40 mb)
+
+step 3:
+	install mongodb_windows (700mb)
+(while installing network service select)
+
+step 4:
+	copy mongosh file from extracted folder.
+
+step 5:
+	paste:
+	c:/program files/mongodb/server/version(7.0)/bin/
+
+
+how to set mongodb path?
+========================
+
+copy path:
+	c:/program files/mongodb/server/7.0/bin
+
+
+this pc --> right click --> properties --> advanced system settings
+        --> environment variables --> system variables: path (select or click) -->edit --> new button click --> paste. ok...
+
+purpose: we can access any drive in your computer.
+
+
+how to check whether mongodb is working or not?
+===============================================
+
+start --> command prompt --> open run as administrator --> yes
+
+
+
+c:/windows/sytem32> mongosh
+
+.................
+.................
+test> 
+
+===============================================================
+how to test whether mongodb(any) is running or stoped?
+
+windows key + R = Run
+
+		-->services.msc
+
+		mongodb server -->status : running
+					   blank (stopped)
+
+
+another way:
+=============
+
+	c:/window/sytem32> net start mongodb
+	The MongoDB Server (MongoDB) service is starting.
+	The MongoDB Server (MongoDB) service was started successfully.
+
+	c:/window/sytem32>net stop mongodb
+	The MongoDB Server (MongoDB) service is stopping.
+	The MongoDB Server (MongoDB) service was stopped successfully.
