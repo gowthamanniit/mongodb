@@ -1,0 +1,22 @@
+
+[
+  {
+    _id: ObjectId('66aa0f292749559410228fbb'),
+    rno: 1,
+    sname: 'abinaya',
+    mark: 22.8,
+    result: 'FAIL',
+    umark: 22.8
+  },
+  {
+    _id: ObjectId('66aa0f3f2749559410228fbc'),
+    rno: 2,
+    sname: 'gayathri',
+    mark: 34.8,
+    result: 'FAIL',
+    umark: 34.8
+  }]
+
+db.detail.updateMany({},{$mul:{mark:1.2}})
+
+db.detail.aggregate([{$addFields:{umark:'$mark'}}])
