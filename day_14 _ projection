@@ -1,6 +1,7 @@
 MongoDB Projection
 ==================
-This is used when we want to get the selected fields of the documents rather than all fields.
+This is used when we want to get the selected fields of the documents 
+rather than all fields.
 
 For example, we have a collection where we have stored documents 
 that have the fields: student_name, student_id, student_age 
