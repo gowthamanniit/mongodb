@@ -5,9 +5,11 @@ Syntax
 The basic syntax of createIndex() method is as follows().
 
 >db.COLLECTION_NAME.createIndex({KEY:1})
-Here key is the name of the field on which you want to create index and 1 is for ascending order.
+Here key is the name of the field on which you want to create index and 
+1 is for ascending order.
 To create index in descending order you need to use -1.
-In createIndex() method you can pass multiple fields, to create index on multiple fields.
+In createIndex() method you can pass multiple fields, 
+to create index on multiple fields.
 
 >db.mycol.createIndex({"title":1,"description":-1})
 The getIndexes() method
