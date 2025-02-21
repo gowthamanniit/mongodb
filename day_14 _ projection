@@ -14,7 +14,10 @@ db.collection_name.find({},{field_key:1 or 0})
 
 
 field key : Value 1 means show that field 
-field key : Value 0 means do not show that field
+field key : Value 0 means do not show that field 
+
+exception for _id field: _id:1 (no need default show)
+                         _id:0 ( must give then only hide)
 
 MongoDB Projection Example
 ============================
