@@ -6,9 +6,10 @@ db.collection_name.insertMany()
 MongoDB Insert Document using insert() Example
 ============================================
 Here we are inserting a document into the collection named “gowthamandb”. 
-The field “course” in the example below is an array that holds the several key-value pairs.
+The field “course” in the example below is an array that holds 
+the several key-value pairs.
 
-db.gowthamandb.insert(  
+db.gowthamandb.insertOne(  
    {  
      name: "ajay",  
      age: 30,
