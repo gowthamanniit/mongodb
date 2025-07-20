@@ -1,7 +1,7 @@
 MongoDB Insert Document:
 ========================
 syntax:
-db.collection_name.insert()
+db.collection_name.insertMany()
 
 MongoDB Insert Document using insert() Example
 ============================================
@@ -47,7 +47,7 @@ To insert multiple documents in collection, we define an array of documents
     },
 ];
 
-> db.students.insert(studentdata);
+> db.students.insertMany(studentdata);
 
 output:
 
